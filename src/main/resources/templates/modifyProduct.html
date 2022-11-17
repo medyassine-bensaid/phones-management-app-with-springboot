@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	
+	<body>
+		<form th:action="@{/modifyProduct}" th:object="${productForm}" method="POST">
+		ID: <input type="text" th:field="*{id}">
+		<th:block th:if="${#fields.hasErrors('id')}"
+		th:errors="*{id}">ID Error</th:block>
+		<br>
+		New Code: <input type="text" th:field="*{code}">
+		<th:block th:if="${#fields.hasErrors('code')}"
+		th:errors="*{code}">Code Error</th:block>
+		<br>
+		New Name: <input type="text" th:field="*{name}">
+		<th:block th:if="${#fields.hasErrors('name')}"
+		th:errors="*{name}">Name Error</th:block>
+		<br>
+		New Price: <input type="text" th:field="*{price}">
+		<th:block th:if="${#fields.hasErrors('price')}"
+		th:errors="*{price}">Price Error</th:block>
+		<br>
+		New Image: <input type="text" th:field="*{image}">
+		<th:block th:if="${#fields.hasErrors('image')}"
+		th:errors="*{image}">Image Error</th:block>
+		<br>
+			<input type="submit" value="modify">
+		</form>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+	<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	</head>
+	
+	<body>
+		<form  th:action="@{/addProduct}" th:object="${productForm}" method="POST">
+		ID: <input type="text" th:field="*{id}">
+		<th:block th:if="${#fields.hasErrors('id')}"
+		th:errors="*{id}">id Error</th:block>
+		<br>
+		Code: <input type="text" th:field="*{code}">
+		<th:block th:if="${#fields.hasErrors('code')}"
+		th:errors="*{code}">code Error</th:block>
+		<br>
+		Name: <input type="text" th:field="*{name}">
+		<th:block th:if="${#fields.hasErrors('name')}"
+		th:errors="*{name}">name Error</th:block>
+		<br>
+		Price: <input type="text" th:field="*{price}">
+		<th:block th:if="${#fields.hasErrors('price')}"
+		th:errors="*{price}">price Error</th:block>
+		<br>
+		Image: <input type="text" th:field="*{image}">
+		<th:block th:if="${#fields.hasErrors('image')}"
+		th:errors="*{image}">image Error</th:block>
+		<br>
+		<input type="submit" value="Create" />
+		</form>
+		
+		
+	</body>
+</html>
